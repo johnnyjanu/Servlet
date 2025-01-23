@@ -44,7 +44,6 @@ public class Test10Controller extends HttpServlet {
 				+ "\n	</body>"
 				+ "\n</html>");
 		
-		
 	}
 	
 	// doPost 메소드 바깥쪽에 위치

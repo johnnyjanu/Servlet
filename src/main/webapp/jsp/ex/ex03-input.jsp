@@ -17,8 +17,6 @@
 		
 		<h3>좋아하는 과일을 하나 고르세요</h3>
 		
-		
-		
 		<button type="submit">입력</button>
 	</form>
 </body>

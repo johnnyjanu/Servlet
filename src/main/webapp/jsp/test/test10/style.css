@@ -1,0 +1,26 @@
+@charset "UTF-8";
+
+#wrap {
+	width:1200px;
+	margin:0 auto;
+}
+
+.logo {
+	height:80px;
+}
+
+nav {
+	height:60px;
+}
+
+section {
+	height:600px;
+}
+
+section > .artist-info {
+	height:200px;
+}
+
+footer {
+	height:50px;
+}

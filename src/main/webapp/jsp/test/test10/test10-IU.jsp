@@ -114,8 +114,12 @@ musicList.add(musicInfo);
 	</nav>
 	<section>
 		<div class="artist-info border border-success d-flex p-2">
-			<img src="<%= artistInfo.get("photo") %>">
-			
+			<img class="mr-4" src="<%= artistInfo.get("photo") %>">
+			<div>
+				<h1 class="mb-2"><%= artistInfo.get("name") %></h1>
+				<h5><%= artistInfo.get("agency") %></h5>
+				<h5><%= artistInfo.get("debute") %>  데뷔</h5>
+			</div>
 		</div>
 		<div class="contents mt-4">
 			<h3 class="font-weight-bold">곡 목록</h3>
@@ -131,7 +135,9 @@ musicList.add(musicInfo);
 					<% for(Map<String, Object> songs:musicList) { %>
 					<tr>
 						<td><%= songs.get("id") %></td>
-						<td><%= songs.get("title") %></td>
+						<td>
+							<a href="#"><%= songs.get("title") %></a>
+						</td>
 						<td><%= songs.get("album") %></td>
 					</tr>
 					<% } %>

@@ -94,15 +94,17 @@ musicList.add(musicInfo);
 %>
 
 <div id="wrap">
+	<form method="get" action="/jsp/test/test10/test10-Song.jsp">
 	<header class="d-flex align-items-center">
-		<div class="logo col-2 d-flex align-items-center h3 text-success">Melong</div>
+		<a href="http://localhost:8080/jsp/test/test10/test10-IU.jsp" class="logo col-2 d-flex align-items-center h3 text-success text-decoration-none">Melong</a>
 		<div class="searcher col-4 input-group">
-			<input type="text" class="form-control" aria-describedby="button-addon2">
+			<input type="text" name="search" class="form-control" aria-describedby="button-addon2">
 			<div class="input-group-append">
-				<button type="button" class="btn btn-info" id="button-addon2">검색</button>
+				<button type="submit" class="btn btn-info" id="button-addon2">검색</button>
 			</div>
 		</div>
 	</header>
+	</form>
 	<nav class="d-flex align-items-center">
 		<ul class="nav nav-fill col-5 font-weight-bold">
 			<li class="nav-item"><a href="#" class="nav-link text-body">멜롱챠트</a></li>
@@ -113,7 +115,7 @@ musicList.add(musicInfo);
 		</ul>
 	</nav>
 	<section>
-		<div class="artist-info border border-success d-flex p-2">
+		<div class="artist-info border border-success d-flex p-3">
 			<img class="mr-4" src="<%= artistInfo.get("photo") %>">
 			<div>
 				<h1 class="mb-2"><%= artistInfo.get("name") %></h1>
@@ -136,7 +138,7 @@ musicList.add(musicInfo);
 					<tr>
 						<td><%= songs.get("id") %></td>
 						<td>
-							<a href="#"><%= songs.get("title") %></a>
+							<a href="/jsp/test/test10/test10-Song.jsp?id=<%= songs.get("id") %>"><%= songs.get("title") %></a>
 						</td>
 						<td><%= songs.get("album") %></td>
 					</tr>

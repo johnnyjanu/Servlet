@@ -13,14 +13,28 @@ nav {
 	height:60px;
 }
 
-section {
-	height:600px;
-}
-
 section > .artist-info {
 	height:200px;
 }
 
+
 footer {
 	height:50px;
+}
+
+.song-info > .infoArea {
+	height:250px;
+}
+
+.infoArea > .areaSize {
+	width:300px;
+}
+
+.informFont {
+	font-size:13px;
+}
+
+section > .lyrics {
+	margin-top:50px;
+	margin-bottom:30px;
 }

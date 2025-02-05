@@ -1,4 +1,4 @@
-package com.maeun.database;
+package com.maeun.database.ex;
 
 import java.io.IOException;
 import java.io.PrintWriter;

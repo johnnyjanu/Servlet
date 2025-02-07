@@ -19,7 +19,7 @@ public class Test02Controller extends HttpServlet {
 		String url = request.getParameter("url");
 		
 		if(name != "" && url != "") {
-			MysqlService mysqlService = new MysqlService();
+			MysqlService mysqlService = MysqlService.getInstance();
 			mysqlService.connect();
 			
 			String query = "INSERT INTO `bookmark`\r\n"					

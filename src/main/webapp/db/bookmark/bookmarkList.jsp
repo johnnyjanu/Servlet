@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ page import="com.maeun.common.MysqlService" %>
 <%@ page import="java.sql.ResultSet" %>
+<%@ page import="java.util.*" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,11 +13,11 @@
 <body>
 	
 	<%
-		MysqlService mysqlService = new MysqlService();
+		MysqlService mysqlService = MysqlService.getInstance();
 	
 		mysqlService.connect();
 		
-		ResultSet resultSet = mysqlService.select("SELECT * FROM `bookmark` ORDER BY `id` DESC;");
+		List<Map<String, Object>> resultList = mysqlService.select("SELECT * FROM `bookmark` ORDER BY `id` DESC;");
 	%>
 	<h1>즐겨찾기 목록</h1>
 	<table class="table text-center">
@@ -28,14 +29,14 @@
 			</tr>
 		</thead>
 		<tbody>
-			<% while(resultSet.next()) { %>
+			<% for(Map<String, Object> result:resultList) { %>
 			<tr>
-				<td><%= resultSet.getString("name") %></td>
+				<td><%= result.get("name") %></td>
 				<td>
-					<a href="<%= resultSet.getString("url") %>"><%= resultSet.getString("url") %></a>
+					<a href="<%= result.get("url") %>"><%= result.get("url") %></a>
 				</td>
 				<td>
-					<a class="btn btn-primary btn-sm font-weight-bold" href="/db/bookmark/delete?id=<%= resultSet.getInt("id") %>">삭제</a>
+					<a class="btn btn-primary btn-sm font-weight-bold" href="/db/bookmark/delete?id=<%= result.get("id") %>">삭제</a>
 				</td>
 			</tr>
 			<% } %>

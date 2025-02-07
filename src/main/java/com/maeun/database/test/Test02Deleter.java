@@ -17,7 +17,7 @@ public class Test02Deleter extends HttpServlet {
 		
 		String id = request.getParameter("id");
 		
-		MysqlService mysqlService = new MysqlService();
+		MysqlService mysqlService = MysqlService.getInstance();
 		
 		mysqlService.connect();
 		
